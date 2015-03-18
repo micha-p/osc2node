@@ -18,7 +18,7 @@ THIS IS NOT INTENDED FOR PRODUCTION !!!
 - no payments
 - no shipping
 
-### INSTALL NODE MODULES
+### INSTALL PACKAGES
 
     sudo apt-get install nodejs npm
     sudo ln -s /usr/bin/nodejs /usr/local/bin/node # for old npm packages
@@ -33,8 +33,9 @@ check database and password in configure.js
 
 ### RUN EXPERIMENT
 
-cd catalog
-npm install image-size mime  mysql-libmysqlclient phpjs
+    cd catalog
+    npm install image-size mime  mysql-libmysqlclient phpjs
+    nodejs SERVER.JS
 
 # TODO
 
