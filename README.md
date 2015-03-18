@@ -28,7 +28,6 @@ THIS IS NOT INTENDED FOR PRODUCTION !!!
     sudo mysqladmin --defaults-file=/etc/mysql/debian.cnf create osc
     sudo mysql --defaults-file=/etc/mysql/debian.cnf -e "grant all privileges on osc.* to 'oscuser'@'localhost' identified by 'MYPASSWORD' with GRANT OPTION;"
     sudo mysql --defaults-file=/etc/mysql/debian.cnf osc < install/oscommerce.sql 
-    sudo mysql --defaults-file=/etc/mysql/debian.cnf osc -e "UPDATE configuration SET configuration_value='bm_categories.php;bm_manufacturers.php;bm_search.php;bm_whats_new.php;bm_information.php;bm_card_acceptance.php;bm_shopping_cart.php;bm_manufacturer_info.php;bm_order_history.php;bm_best_sellers.php;bm_product_notifications.php;bm_product_social_bookmarks.php;bm_specials.php;bm_reviews.php;bm_languages.php;bm_currencies.php' WHERE configuration_key = 'MODULE_BOXES_INSTALLED';"
 
 check database and password in configure.js
 
