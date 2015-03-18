@@ -33,7 +33,8 @@ check database and password in configure.js
 
 ### RUN EXPERIMENT
 
-    cd catalog
+    git clone https://github.com/micha-p/oscommerce2nodejs.git
+    cd oscommerce2nodejs/catalog
     npm install image-size mime  mysql-libmysqlclient phpjs
     nodejs SERVER.JS
 
