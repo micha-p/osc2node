@@ -96,6 +96,8 @@
 
               if ( class_exists($class) ) {
                 $mb = new $class();
+                
+                error_log('module block:' + $class);
 
                 if ( $mb->isEnabled() ) {
                   $mb->execute();

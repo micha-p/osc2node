@@ -1,0 +1,21 @@
+/*
+  $Id$
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2007 osCommerce
+
+  Released under the GNU General Public License
+*/
+var NAVBAR_TITLE = 'Cart Contents';
+var HEADING_TITLE = 'What\'s In My Cart?';
+var TABLE_HEADING_PRODUCTS = 'Product(s)';
+var TEXT_CART_EMPTY = 'Your Shopping Cart is empty!';
+var SUB_TITLE_SUB_TOTAL = 'Sub-Total:';
+var SUB_TITLE_TOTAL = 'Total:';
+var OUT_OF_STOCK_CANT_CHECKOUT = 'Products marked with ' + STOCK_MARK_PRODUCT_OUT_OF_STOCK + ' dont exist in desired quantity in our stock.<br />Please alter the quantity of products marked with (' + STOCK_MARK_PRODUCT_OUT_OF_STOCK + '), Thank you';
+var OUT_OF_STOCK_CAN_CHECKOUT = 'Products marked with ' + STOCK_MARK_PRODUCT_OUT_OF_STOCK + ' dont exist in desired quantity in our stock.<br />You can buy them anyway and check the quantity we have in stock for immediate deliver in the checkout process.';
+var TEXT_ALTERNATIVE_CHECKOUT_METHODS = '- OR -';
+var TEXT_OR = 'or ';
+var TEXT_REMOVE = 'remove';

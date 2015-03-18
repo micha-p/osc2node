@@ -10,6 +10,8 @@
   Released under the GNU General Public License
 */
 
+if ($DEBUG) error_log("DATABASE.PHP");
+
   function tep_db_connect($server = DB_SERVER, $username = DB_SERVER_USERNAME, $password = DB_SERVER_PASSWORD, $database = DB_DATABASE, $link = 'db_link') {
     global $$link;
 
@@ -43,6 +45,7 @@
   function tep_db_query($query, $link = 'db_link') {
     global $$link;
 
+    if ($GLOBALS['DEBUG']) error_log('QUERY ' . substr($query,0,128));
     if (defined('STORE_DB_TRANSACTIONS') && (STORE_DB_TRANSACTIONS == 'true')) {
       error_log('QUERY: ' . $query . "\n", 3, STORE_PAGE_PARSE_TIME_LOG);
     }

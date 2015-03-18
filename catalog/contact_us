@@ -1,0 +1,118 @@
+/*
+  $Id$
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2010 osCommerce
+
+  Released under the GNU General Public License
+*/
+
+
+
+if (HTTP_GET_VARS['action'] && HTTP_GET_VARS['action'] == 'send' && HTTP_POST_VARS['formid'] && HTTP_POST_VARS['formid'] == sessiontoken) {
+    error = false;
+    name = tep_db_prepare_input(HTTP_POST_VARS['name']);
+    email_address = tep_db_prepare_input(HTTP_POST_VARS['email']);
+    enquiry = tep_db_prepare_input(HTTP_POST_VARS['enquiry']);
+    if (!tep_validate_email(email_address)) {
+        error = true;
+        messageStack.add('contact', ENTRY_EMAIL_ADDRESS_CHECK_ERROR);
+    }
+    actionRecorder = new actionRecorder('ar_contact_us', tep_session_is_registered('customer_id') &&  customer_id  || null, name);
+    if (!actionRecorder.canPerform()) {
+        error = true;
+        actionRecorder.record(false);
+        messageStack.add('contact', sprintf(ERROR_ACTION_RECORDER, defined('MODULE_ACTION_RECORDER_CONTACT_US_EMAIL_MINUTES') && MODULE_ACTION_RECORDER_CONTACT_US_EMAIL_MINUTES  || 15));
+    }
+    if (error == false) {
+        tep_mail(STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, EMAIL_SUBJECT, enquiry, name, email_address);
+        actionRecorder.record();
+        tep_redirect(tep_href_link(FILENAME_CONTACT_US, 'action=success'));
+    }
+}
+
+breadcrumb.add(NAVBAR_TITLE, tep_href_link(FILENAME_CONTACT_US));
+eval(fs.readFileSync(DIR_WS_INCLUDES + 'template_top.js').toString())
+
+print('')
+print('<h1>' + HEADING_TITLE + '</h1>')
+print('')
+
+if (messageStack.size('contact') > 0) {
+    print(messageStack.output('contact'));
+}
+if (HTTP_GET_VARS['action'] && HTTP_GET_VARS['action'] == 'success') {
+    print('')
+    print('<div class="contentContainer">')
+    print('  <div class="contentText">')
+    print('    ')
+    
+    print(TEXT_SUCCESS);
+    print('  </div>')
+    print('')
+    print('  <div style="float: right;">')
+    print('    ')
+    
+    print(tep_draw_button(IMAGE_BUTTON_CONTINUE, 'triangle-1-e', tep_href_link(FILENAME_DEFAULT)));
+    print('  </div>')
+    print('</div>')
+    print('')
+    print('')
+
+} else {
+    print('')
+    print('')
+    
+    print(tep_draw_form('contact_us', tep_href_link(FILENAME_CONTACT_US, 'action=send'), 'post', '', true));
+    print('')
+    print('<div class="contentContainer">')
+    print('  <div class="contentText">')
+    print('    <table border="0" width="100%" cellspacing="0" cellpadding="2">')
+    print('      <tr>')
+    print('        <td class="fieldKey">')
+    
+    print(ENTRY_NAME);
+    print('</td>')
+    print('        <td class="fieldValue">')
+    
+    print(tep_draw_input_field('name'));
+    print('</td>')
+    print('      </tr>')
+    print('      <tr>')
+    print('        <td class="fieldKey">')
+    
+    print(ENTRY_EMAIL);
+    print('</td>')
+    print('        <td class="fieldValue">')
+    
+    print(tep_draw_input_field('email'));
+    print('</td>')
+    print('      </tr>')
+    print('      <tr>')
+    print('        <td class="fieldKey" valign="top">')
+    
+    print(ENTRY_ENQUIRY);
+    print('</td>')
+    print('        <td class="fieldValue">')
+    
+    print(tep_draw_textarea_field('enquiry', 'soft', 50, 15));
+    print('</td>')
+    print('      </tr>')
+    print('    </table>')
+    print('  </div>')
+    print('')
+    print('  <div class="buttonSet">')
+    print('    <span class="buttonAction">')
+    
+    print(tep_draw_button(IMAGE_BUTTON_CONTINUE, 'triangle-1-e', null, 'primary'));
+    print('</span>')
+    print('  </div>')
+    print('</div>')
+    print('')
+    print('</form>')
+    print('')
+    print('')
+
+}

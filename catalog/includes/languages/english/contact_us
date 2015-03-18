@@ -1,0 +1,18 @@
+/*
+  $Id$
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2002 osCommerce
+
+  Released under the GNU General Public License
+*/
+var HEADING_TITLE = 'Contact Us';
+var NAVBAR_TITLE = 'Contact Us';
+var TEXT_SUCCESS = 'Your enquiry has been successfully sent to the Store Owner.';
+var EMAIL_SUBJECT = 'Enquiry from ' + STORE_NAME;
+var ENTRY_NAME = 'Full Name:';
+var ENTRY_EMAIL = 'E-Mail Address:';
+var ENTRY_ENQUIRY = 'Enquiry:';
+var ERROR_ACTION_RECORDER = 'Error: An enquiry has already been sent. Please try again in %s minutes.';

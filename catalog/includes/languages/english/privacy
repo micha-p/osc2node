@@ -1,0 +1,13 @@
+/*
+  $Id$
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2002 osCommerce
+
+  Released under the GNU General Public License
+*/
+var NAVBAR_TITLE = 'Privacy Notice';
+var HEADING_TITLE = 'Privacy Notice';
+var TEXT_INFORMATION = 'Put here your Privacy Notice information.';

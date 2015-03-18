@@ -10,6 +10,13 @@
   Released under the GNU General Public License
 */
 
+
+$DEBUG = true;
+$CLASS = true;
+$TRACE = true;
+
+if ($TRACE) error_log("APPLICATION TOP");
+
 // start the timer for the page parse time log
   define('PAGE_PARSE_START_TIME', microtime());
 

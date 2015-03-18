@@ -13,7 +13,8 @@
   class shoppingCart {
     var $contents, $total, $weight, $cartID, $content_type;
 
-    function shoppingCart() {
+    function shoppingCart() {    	
+      if ($GLOBALS['CLASS']) error_log('CLASS shopping cart' . substr($contents,0,128));
       $this->reset();
     }
 

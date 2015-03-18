@@ -19,6 +19,7 @@
     var $enabled = false;
 
     function bm_search() {
+    	error_log('CLASS bm_search' . substr($contents,0,128));
       $this->title = MODULE_BOXES_SEARCH_TITLE;
       $this->description = MODULE_BOXES_SEARCH_DESCRIPTION;
 

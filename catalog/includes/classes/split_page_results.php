@@ -15,6 +15,7 @@
 
 /* class constructor */
     function splitPageResults($query, $max_rows, $count_key = '*', $page_holder = 'page') {
+    	error_log('CLASS splitPageResults' . substr($contents,0,128));
       global $HTTP_GET_VARS, $HTTP_POST_VARS;
 
       $this->sql_query = $query;
@@ -71,6 +72,7 @@
 
 // display split-page-number-links
     function display_links($max_page_links, $parameters = '') {
+    	error_log('DISPLAY splitPageResults' . substr($contents,0,128));
       global $PHP_SELF, $request_type;
 
       $display_links_string = '';

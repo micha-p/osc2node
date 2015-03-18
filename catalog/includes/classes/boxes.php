@@ -10,6 +10,9 @@
   Released under the GNU General Public License
 */
 
+if ($DEBUG) error_log("CLASS BOX");
+if ($CLASS) error_log("CLASS enabled");
+
   class tableBox {
     var $table_border = '0';
     var $table_width = '100%';
@@ -21,6 +24,8 @@
 
 // class constructor
     function tableBox($contents, $direct_output = false) {
+    	
+    	error_log('CLASS tablebox' . substr($contents,0,128));
       $tableBox_string = '<table border="' . tep_output_string($this->table_border) . '" width="' . tep_output_string($this->table_width) . '" cellspacing="' . tep_output_string($this->table_cellspacing) . '" cellpadding="' . tep_output_string($this->table_cellpadding) . '"';
       if (tep_not_null($this->table_parameters)) $tableBox_string .= ' ' . $this->table_parameters;
       $tableBox_string .= '>' . "\n";
@@ -74,6 +79,7 @@
 
   class infoBox extends tableBox {
     function infoBox($contents) {
+    	error_log('CLASS infobox' . substr($contents,0,128));
       $info_box_contents = array();
       $info_box_contents[] = array('text' => $this->infoBoxContents($contents));
       $this->table_cellpadding = '1';
@@ -99,6 +105,7 @@
 
   class infoBoxHeading extends tableBox {
     function infoBoxHeading($contents, $left_corner = true, $right_corner = true, $right_arrow = false) {
+    	error_log('CLASS infoboxheading' . substr($contents,0,128));
       $this->table_cellpadding = '0';
 
       if ($left_corner == true) {
@@ -131,6 +138,8 @@
 
   class contentBox extends tableBox {
     function contentBox($contents) {
+      error_log('CLASS contentbox' . substr($contents,0,128));
+
       $info_box_contents = array();
       $info_box_contents[] = array('text' => $this->contentBoxContents($contents));
       $this->table_cellpadding = '1';
@@ -147,6 +156,7 @@
 
   class contentBoxHeading extends tableBox {
     function contentBoxHeading($contents) {
+      error_log('CLASS contentbox HEADING' . substr($contents,0,128));
       $this->table_width = '100%';
       $this->table_cellpadding = '0';
 
@@ -164,6 +174,8 @@
 
   class errorBox extends tableBox {
     function errorBox($contents) {
+      if ($GLOBALS['CLASS']) error_log('CLASS errorbox' . substr($contents,0,128));
+
       $this->table_data_parameters = 'class="errorBox"';
       $this->tableBox($contents, true);
     }

@@ -14,6 +14,7 @@
     var $info, $totals, $products, $customer, $delivery, $content_type;
 
     function order($order_id = '') {
+    	error_log('CLASS order' . substr($contents,0,128));
       $this->info = array();
       $this->totals = array();
       $this->products = array();

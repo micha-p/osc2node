@@ -1,0 +1,13 @@
+/*
+  $Id$
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2002 osCommerce
+
+  Released under the GNU General Public License
+*/
+var NAVBAR_TITLE = 'Reviews';
+var HEADING_TITLE = 'Read What Others Are Saying';
+var TEXT_OF_5_STARS = '%s of 5 Stars!';

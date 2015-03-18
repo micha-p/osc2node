@@ -1,0 +1,20 @@
+includes/classes/shopping_cart.php:class shoppingCart {
+includes/classes/order_total.php:class order_total {
+includes/classes/cc_validation.php:class cc_validation {
+includes/classes/shipping.php:class shipping {
+includes/classes/passwordhash.php:class PasswordHash {
+includes/classes/action_recorder.php:class actionRecorder {
+includes/classes/osc_template.php:class oscTemplate {				<==  THIS IS ESSENTIAL
+includes/classes/payment.php:class payment {
+includes/classes/breadcrumb.php:class breadcrumb {				<==  THIS IS ESSENTIAL
+includes/classes/navigation_history.php:class navigationHistory {		<==  THIS IS ESSENTIAL
+includes/classes/email.php:class email {					<==  ESSENTIAL ?
+includes/classes/split_page_results.php:class splitPageResults {     		<==  THIS IS ESSENTIAL
+includes/classes/order.php:class order {
+includes/classes/mime.php:class mime {
+includes/classes/boxes.php:class tableBox {
+includes/classes/currencies.php:class currencies {				<==  THIS IS ESSENTIAL
+includes/classes/language.php:class language {					<==  THIS IS ESSENTIAL
+includes/classes/http_client.php:class httpClient {
+
+

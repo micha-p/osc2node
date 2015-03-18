@@ -66,6 +66,7 @@
 // This function encrypts a salted password from a plaintext
 // password.
   function tep_encrypt_old_password($plain) {
+  	 throw "Cryptographic Random generator for passwords not implemented";
     $password = '';
 
     for ($i=0; $i<10; $i++) {
